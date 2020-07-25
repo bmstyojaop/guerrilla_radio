@@ -1,56 +1,159 @@
-* {
-  box-sizing: border-box;
-}
-
-.Header {
-  // background: lightblue;
-  height: 54px;
-  width: 100vw;
-  padding: 0 20px;
+main {
+  padding-top: 54px;
+  height: 100%;
+  width: 100%;
   display: flex;
-  align-items: center;
-  justify-content: space-between;
-  border-top: 4px solid #00376b;
-  border-bottom: 4px solid #00376b;
-  &__icon{
-    // background: lightcoral;
-    height: 34px;
-    width: 100% ;
-    line-height: 34px;
-    img {
-      height: 100%;
-      width: 120px;
-      border-radius: 5px;
-    }
-    img:hover{
-      cursor: pointer;
-      opacity: 0.8;
-    }
-  }
-  &__search{
-    // background: lightgoldenrodyellow;
-    height: 28px;
-    width: 215px;
-    input {
-      background-color: rgb(235, 237, 240);
-    }
-    ::placeholder{
-      text-align: center;
-    }
-  }
-  
-  &__items {
-    // background: lightseagreen;
-    height: 22px;
-    width: 100%;
+  justify-content: center;
+  overflow: scroll;
+  .TweetField {
+    background: mediumaquamarine;
+    height: 100%;
+    width: 100vh;
+    padding-top: 30px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 0;
     display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    &--icon {
-      margin-right: 10px;
-      font-size: 20px;
+    justify-content: center;
+    flex-direction: column;
+    overflow: scroll;
+    .PostedItem {
+      background: midnightblue;
+      width: 600px;
+      height: auto;
+      margin-left: auto;
+      margin-right: auto;
+      margin-bottom: 60px;
+      .ArticleHeader {
+        background: olive;
+        width: 100%;
+        height: 60px;
+        // .More {
+        //   &__list{
+        //     overflow: hidden;
+
+        //   }
+        // }
+        .More {
+         display: flex;
+          height: 2rem;
+          margin: 0 auto;
+          width: 1000px;
+          > li {
+
+            width: 20px;
+            li {
+              width: 60px;
+              text-align: center;
+            }
+          }
+          li {
+            list-style: none;
+            position: relative;
+            a{
+              background-color: #001b34;
+              border-right: 1px solid #eee;
+              color: #fff;
+              display: block;
+              height: 2rem;
+              line-height: 2rem;
+              text-align: center;
+              text-decoration: none;
+              width: 100%;
+            }
+            // :hover {
+            //   > ul{
+            //     > li{
+            //       height: 2rem;
+            //       overflow: visible;
+            //     }
+            //   }
+            // }  
+
+            // li {
+            //   height: 0;
+            //   overflow: hidden;
+            //   transition: .5s;
+            //   a {
+            //     border-top: 1px solid #eee;
+            //   }
+            // }
+          }
+        }
+      }
+      .More li li {
+        height: 0;
+        overflow: hidden;
+        transition: .5s;
+      }
+      .More li li a {
+          border-top: 1px solid #eee;
+      }
+      .More li:hover > ul > li {
+          height: 2rem;
+          overflow: visible;
+      }
+      .Picture{
+        // background: crimson;
+        height: 600px;
+        width: 600px;
+        .content_post {
+          height: 100%;
+          width: 100%;
+        }
+      }
+      .ReactionBtn {
+        background: darkviolet;
+        width: 600px;
+        height: 40px;
+        background: wheat;
+        padding: 0 20px;
+        &__good {
+          color: goldenrod;
+          font-size: 35px;
+        }
+      }
+      .Details {
+        background: rgb(41, 87, 90);
+        height: auto;
+        padding: 7px 15px;
+        
+        justify-content: center;
+        align-items: center;
+      }
+      .Comments{
+        background: lightyellow;
+        height: auto;
+        min-height: 60px;
+        padding: 7px 15px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        &__reply {
+          background: deepskyblue;
+          height: 100%;
+        
+          span {
+            display: inline-block;
+            background: firebrick;
+            width: auto;
+            min-width: 20px;
+            margin-right: 5px;
+          }
+        }
+      }
+      .Addcomment {
+        width: 100%;
+        height: 40px;
+        .commentblock {
+          background: salmon;
+          border: 1px solid;
+          height: 40px;
+          width: 100%;
+          font-size: 15px;
+        }
+      }
     }
-
   }
-
 }

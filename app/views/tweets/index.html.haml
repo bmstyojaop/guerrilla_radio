@@ -1,0 +1,48 @@
+%main
+  %section.TweetField
+    - @tweets.each do |tweet| 
+      %article.PostedItem
+        .ArticleHeader
+           
+          %ul.More
+            %li 
+              = link_to "#", class: "More" do
+
+                = icon('fas', 'bars')
+              %ul
+                %li
+                  -# = link_to 削除, tweet_path{tweet.id}, method: :delete
+                  = link_to "削除", tweet_path(tweet.id), method: :delete, class: 'Button'
+
+                %li
+                  = link_to 'Child2', "#"
+                %li
+                  = link_to 'Child3', "#"
+                %li
+                  = link_to 'Child4', "#"
+                %li
+                  = link_to 'Child5', "#"
+            
+        .Picture
+          .content_post{style: "background-image: url(#{tweet.image})"}
+        .ReactionBtn
+          = icon('fas', 'star', class: 'ReactionBtn__good')
+        .Details 
+          = tweet.name
+          %span<>
+          = tweet.text
+        .Comments
+          .Comments__reply
+            %span<friendname>
+            ここにリプライが表示されますここにリプライが表示されますここにリプライが表示されますここにリプライが表示されますここにリプライが表示されます
+          .Comments__reply
+            %span<friendname>
+            ここにリプライが表示されますここにリプライが表示されますここにリプライが表示されますここにリプライが表示されますここにリプライが表示されます
+          .Comments__reply
+            %span<friendname>
+            ここにリプライが表示されますここにリプライが表示されますここにリプライが表示されますここにリプライが表示されますここにリプライが表示されます
+        
+          .Addcomment
+            .commentblock
+              コメントを追加する
+
