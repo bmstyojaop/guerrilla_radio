@@ -1,6 +1,76 @@
 @import "reset";
 @import "modules/tweets";
+@import "modules/new";
 @import "font-awesome-sprockets";
 @import "font-awesome";
 // @import "modules/flash"
+* {
+  box-sizing: border-box;
+}
+// html{
+//   height: 100vh;
+//   width: 100vw;
+// }
+.Header {
+  background: lightblue;
+  height: 54px;
+  width: 100vw;
+  padding: 0 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-top: 4px solid #00376b;
+  border-bottom: 4px solid #00376b;
+  position: fixed;
+  background-color: #edf9fa;
+  &__icon{
+    // background: lightcoral;
+    height: 38px;
+    width: 100% ;
+    line-height: 34px;
+    img {
+      height: 100%;
+      width: 150px;
+      border-radius: 5px;
+    }
+    img:hover{
+      cursor: pointer;
+      opacity: 0.8;
+    }
+  }
+  &__search{
+    // background: lightgoldenrodyellow;
+    height: 28px;
+    width: 215px;
+    
+    input {
+      background-color: rgb(235, 237, 240);
+      border-radius: 5px;
+      border: 1px solid rgb(202, 202, 218);
+    }
+    ::placeholder{
+      text-align: center;
+    }
+  }
+  
+  &__items {
+    // background: lightseagreen;
+    height: 22px;
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
 
+    &--icon {
+      margin-right: 20px;
+      font-size: 35px;
+      -webkit-text-stroke: 1.5px #fff;
+      // :hover {
+      //   cursor: pointer;
+      //   opacity: 0.8;
+      // }
+    }
+
+  }
+
+}
