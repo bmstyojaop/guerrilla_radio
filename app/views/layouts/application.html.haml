@@ -6,12 +6,12 @@
     = csrf_meta_tags
     = csp_meta_tag
     = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload'
-    = javascript_include_tag 'application'
+    = javascript_pack_tag 'application', 'data-turbolinks-track': 'reload'
   %body
     .wrapper
       .Header
         .Header__icon
-          = image_tag "logo.png", alt: "顔写真"
+          = link_to image_tag("logo.png", alt: "顔写真"), root_path
         .Header__search
           %input{ placeholder: '検索する', type: "text"}/
         .Header__items

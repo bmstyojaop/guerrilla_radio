@@ -11,18 +11,12 @@
                 = icon('fas', 'bars')
               %ul
                 %li
-                  -# = link_to 削除, tweet_path{tweet.id}, method: :delete
-                  = link_to "削除", tweet_path(tweet.id), method: :delete, class: 'Button'
-
+                  = link_to '詳細', tweet_path(tweet.id), method: :get
                 %li
-                  = link_to 'Child2', "#"
+                  = link_to '編集', edit_tweet_path(tweet.id), method: :get
                 %li
-                  = link_to 'Child3', "#"
-                %li
-                  = link_to 'Child4', "#"
-                %li
-                  = link_to 'Child5', "#"
-            
+                  = link_to '削除', tweet_path(tweet.id), method: :delete
+                
         .Picture
           .content_post{style: "background-image: url(#{tweet.image})"}
         .ReactionBtn
