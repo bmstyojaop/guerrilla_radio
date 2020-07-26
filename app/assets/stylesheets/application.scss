@@ -3,6 +3,7 @@
 @import "modules/new";
 @import "font-awesome-sprockets";
 @import "font-awesome";
+@import "modules/user";
 // @import "modules/flash"
 * {
   box-sizing: border-box;
@@ -82,8 +83,5 @@
       //   opacity: 0.8;
       // }
     }
-
-
   }
-
 }
