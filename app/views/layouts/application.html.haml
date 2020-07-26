@@ -14,9 +14,20 @@
           = link_to image_tag("logo.png", alt: "顔写真"), root_path
         .Header__search
           %input{ placeholder: '検索する', type: "text"}/
-        .Header__items
-          = icon('fas', 'home', class: 'Header__items--icon')
-          = icon('far', 'plus-square', class: 'Header__items--icon')
-          = icon('far', 'star', class: 'Header__items--icon')
-          -# <i class="far fa-plus-square"></i>
+        -if user_signed_in?
+        -else
+
+        - if user_signed_in?
+          .Header__items
+            = icon('fas', 'home', class: 'Header__items--icon')
+            = icon('far', 'plus-square', class: 'Header__items--icon')
+            = icon('far', 'star', class: 'Header__items--icon')
+            = link_to 'ログアウト', destroy_user_session_path, method: :delite
+            = link_to '新規登録', new_user_registration_path, class: "post"
+        - else
+          .Header__items
+            = link_to 'ログイン', new_user_session_path, class: "post"
+            = link_to '新規登録', new_user_registration_path, class: "post"
+        
+
       = yield

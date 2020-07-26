@@ -18,7 +18,7 @@
   padding: 0 20px;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: space-around;
   border-top: 4px solid #00376b;
   border-bottom: 4px solid #00376b;
   position: fixed;
@@ -55,12 +55,24 @@
   
   &__items {
     // background: lightseagreen;
-    height: 22px;
+    height: 40px;
     width: 100%;
     display: flex;
     justify-content: flex-end;
     align-items: center;
 
+    .post {
+      background-color: white;
+      height: 100%;
+      padding: 4px;
+      margin-left: 20px;
+      text-decoration: none;
+      display: block;
+      border: 3px solid lightgray;
+      color: mediumturquoise;
+      border-radius: 5px;
+      
+    }
     &--icon {
       margin-right: 20px;
       font-size: 35px;
@@ -70,6 +82,7 @@
       //   opacity: 0.8;
       // }
     }
+
 
   }
 
