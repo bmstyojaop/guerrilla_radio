@@ -20,9 +20,10 @@
         - if user_signed_in?
           .Header__items
             = icon('fas', 'home', class: 'Header__items--icon')
-            = icon('far', 'plus-square', class: 'Header__items--icon')
+            = link_to destroy_user_session_path, class: " Header__items--icon", method: :delite do
+              = icon('far', 'plus-square')
+              %span<>
             = icon('far', 'star', class: 'Header__items--icon')
-            = link_to 'ログアウト', destroy_user_session_path, method: :delite
             = link_to '新規登録', new_user_registration_path, class: "post"
         - else
           .Header__items
