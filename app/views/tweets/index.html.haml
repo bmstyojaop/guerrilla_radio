@@ -3,12 +3,9 @@
     - @tweets.each do |tweet| 
       %article.PostedItem
         .ArticleHeader
-           
           %ul.More
             %li 
-              = link_to "#", class: "More" do
-
-                = icon('fas', 'bars')
+              = icon('fas', 'bars')
               %ul
                 %li
                   = link_to '詳細', tweet_path(tweet.id), method: :get
