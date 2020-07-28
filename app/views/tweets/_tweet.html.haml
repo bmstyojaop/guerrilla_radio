@@ -1,0 +1,39 @@
+%article.PostedItem
+  .ArticleHeader
+    %ul.More
+      %li 
+        = icon('fas', 'bars')
+        %ul
+          %li
+            = link_to '詳細', tweet_path(tweet.id), method: :get
+          - if user_signed_in? && current_user.id == tweet.user_id
+            %li
+              = link_to '編集', edit_tweet_path(tweet.id), method: :get
+            %li
+              = link_to '削除', tweet_path(tweet.id), method: :delete
+          
+  .Picture
+    .content_post{style: "background-image: url(#{tweet.image})"}
+  .ReactionBtn
+    = icon('fas', 'star', class: 'ReactionBtn__good')
+  .Details 
+    %a{href: "/users/#{tweet.user.id}"}
+      %span 投稿者
+      = tweet.user.nickname
+    %span<>
+    = tweet.text
+  .Comments
+    .Comments__reply
+      %span<friendname>
+      ここにリプライが表示されますここにリプライが表示されますここにリプライが表示されますここにリプライが表示されますここにリプライが表示されます
+    .Comments__reply
+      %span<friendname>
+      ここにリプライが表示されますここにリプライが表示されますここにリプライが表示されますここにリプライが表示されますここにリプライが表示されます
+    .Comments__reply
+      %span<friendname>
+      ここにリプライが表示されますここにリプライが表示されますここにリプライが表示されますここにリプライが表示されますここにリプライが表示されます
+  
+    .Addcomment
+      .commentblock
+        コメントを追加する
+
