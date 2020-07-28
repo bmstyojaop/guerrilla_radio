@@ -1,4 +1,4 @@
-main {
+.Index {
   padding-top: 54px;
   height: 100%;
   width: 100%;
@@ -28,32 +28,23 @@ main {
         background: olive;
         width: 100%;
         height: 60px;
-        // .More {
-        //   &__list{
-        //     overflow: hidden;
-
-        //   }
-        // }
-        .More {
-         display: flex;
-          height: 2rem;
-          margin: 0 auto;
-          width: 1000px;
-          > li {
-
-            width: 20px;
-            li {
-              width: 60px;
-              text-align: center;
-            }
-          }
+        .More > li {
+          width: 20px;
           li {
-            list-style: none;
-            position: relative;
-            a{
-              background-color: #001b34;
-              border-right: 1px solid #eee;
-              color: #fff;
+            width: 60px;
+          }
+        }
+        li {
+          list-style: none;
+          position: relative;
+          li {
+            height: 0;
+            overflow: hidden;
+            transition: .5s;
+            a {
+              border-top: 1px solid #eee;
+              background-color: white;
+              color: black;
               display: block;
               height: 2rem;
               line-height: 2rem;
@@ -61,33 +52,8 @@ main {
               text-decoration: none;
               width: 100%;
             }
-            // :hover {
-            //   > ul{
-            //     > li{
-            //       height: 2rem;
-            //       overflow: visible;
-            //     }
-            //   }
-            // }  
-
-            // li {
-            //   height: 0;
-            //   overflow: hidden;
-            //   transition: .5s;
-            //   a {
-            //     border-top: 1px solid #eee;
-            //   }
-            // }
           }
         }
-      }
-      .More li li {
-        height: 0;
-        overflow: hidden;
-        transition: .5s;
-      }
-      .More li li a {
-          border-top: 1px solid #eee;
       }
       .More li:hover > ul > li {
           height: 2rem;

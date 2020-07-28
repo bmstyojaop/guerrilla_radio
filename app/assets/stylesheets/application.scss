@@ -3,6 +3,7 @@
 @import "modules/new";
 @import "font-awesome-sprockets";
 @import "font-awesome";
+@import "modules/user";
 // @import "modules/flash"
 * {
   box-sizing: border-box;
@@ -18,16 +19,18 @@
   padding: 0 20px;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: space-around;
   border-top: 4px solid #00376b;
   border-bottom: 4px solid #00376b;
   position: fixed;
   background-color: #edf9fa;
+  z-index:9999;
   &__icon{
     // background: lightcoral;
     height: 38px;
     width: 100% ;
     line-height: 34px;
+
     img {
       height: 100%;
       width: 150px;
@@ -55,22 +58,68 @@
   
   &__items {
     // background: lightseagreen;
-    height: 22px;
+    height: 40px;
     width: 100%;
     display: flex;
     justify-content: flex-end;
     align-items: center;
 
+    .post {
+      background-color: white;
+      height: 100%;
+      padding: 4px;
+      margin-left: 20px;
+      text-decoration: none;
+      display: block;
+      border: 3px solid lightgray;
+      color: mediumturquoise;
+      border-radius: 5px;
+    }
     &--icon {
       margin-right: 20px;
       font-size: 35px;
       -webkit-text-stroke: 1.5px #fff;
-      // :hover {
-      //   cursor: pointer;
-      //   opacity: 0.8;
-      // }
     }
-
   }
+  .HeaderRight{
+    background-color: blueviolet;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
+    .UserMenu > li {
+      li {
+        width: 100px;
+      }
+    }
+    li {
+      list-style: none;
+      position: relative;
+      ul {
+        position: absolute;
+        li {
+          height: 0;
+          overflow: hidden;
+          transition: .5s;
+          a {
+            border-top: 1px solid #eee;
+            background-color: white;
+            color: black;
+            display: block;
+            height: 2rem;
+            line-height: 2rem;
+            text-align: center;
+            text-decoration: none;
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+  .UserMenu li:hover > ul > li {
+    height: 2rem;
+    overflow: visible;
+  }
 }
