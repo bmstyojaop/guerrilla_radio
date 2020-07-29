@@ -16,5 +16,6 @@
     .content_post{style: "background-image: url(#{tweet.image})"}
   .ReactionBtn
     = icon('fas', 'star', class: 'ReactionBtn__good')
-
+  - @tweet.tag_list.each do |tag|
+    %span{style: "background-color: #e9e9e9; border-radius: 5px;"}= tag
 

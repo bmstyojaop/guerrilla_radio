@@ -1,3 +1,6 @@
+.tags
+  = form.label :tag_list
+  = text_field_tag 'tweet[tag_list]', @tweet.tag_list.join("")
 = form.text_field :image, placeholder: "photo", rows: "10"
 = form.text_area :text, placeholder: "text", rows: "10"
 = form.submit "投稿する"

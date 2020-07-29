@@ -1,4 +1,5 @@
 class Tweet < ApplicationRecord
+  acts_as_taggable
   validates :text, presence: true
   belongs_to :user
   has_many :comments
