@@ -13,7 +13,9 @@
         .Header__icon
           = link_to image_tag("logo.png", alt: "顔写真"), root_path
         .Header__search 
-          %input{ placeholder: '検索する', type: "text"}/
+          = form_with(url: search_tweets_path, local: true, method: :get, class: "search-form") do |form|
+            = form.text_field :keyword, placeholder: "投稿を検索する", class: "search-input"
+            = form.submit "検索", class: "search-btn"
 
         - if user_signed_in?
           .Header__items

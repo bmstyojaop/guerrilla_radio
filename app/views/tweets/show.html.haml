@@ -1,4 +1,4 @@
-%main
+%main.Index
   %section.TweetField
     %article.PostedItem
       .ArticleHeader
@@ -18,21 +18,26 @@
       .ReactionBtn
         = icon('fas', 'star', class: 'ReactionBtn__good')
       .Details 
-        = @tweet.name
-        %span<>
+        = @tweet.user.nickname
+        %span<>:
         = @tweet.text
       .Comments
         .Comments__reply
-          %span<friendname>
-          ここにリプライが表示されますここにリプライが表示されますここにリプライが表示されますここにリプライが表示されますここにリプライが表示されます
-        .Comments__reply
-          %span<friendname>
-          ここにリプライが表示されますここにリプライが表示されますここにリプライが表示されますここにリプライが表示されますここにリプライが表示されます
-        .Comments__reply
-          %span<friendname>
-          ここにリプライが表示されますここにリプライが表示されますここにリプライが表示されますここにリプライが表示されますここにリプライが表示されます
-      
+          - if @comments
+            - @comments.each do |comment|
+              .Comments__reply--individual
+                %span
+                  %strong
+                    = link_to comment.user.nickname, "/users/#{comment.user_id}"
+                    
+                = comment.text
         .Addcomment
-          .commentblock
-            コメントを追加する
+          - if current_user
+            .commentblock
+              = form_with(model: [@tweet, @comment], local: true, id: "new_comment") do |form|
+                = form.text_area :text, placeholder: "コメントする", rows: "2"
+                = form.submit "SEND"
+          - else
+            %strong
+              %p ※※※ コメントの投稿には新規登録/ログインが必要です ※※※              
 

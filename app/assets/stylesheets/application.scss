@@ -1,6 +1,5 @@
 @import "reset";
 @import "modules/tweets";
-@import "modules/new";
 @import "font-awesome-sprockets";
 @import "font-awesome";
 @import "modules/user";
@@ -45,11 +44,13 @@
     // background: lightgoldenrodyellow;
     height: 28px;
     width: 215px;
-    
-    input {
-      background-color: rgb(235, 237, 240);
-      border-radius: 5px;
-      border: 1px solid rgb(202, 202, 218);
+    form {
+      display: flex;
+      .search-btn {
+        background-color: rgb(235, 237, 240);
+        border-radius: 5px;
+        border: 1px solid rgb(202, 202, 218);
+      }
     }
     ::placeholder{
       text-align: center;
