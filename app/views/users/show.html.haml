@@ -40,4 +40,9 @@
           .Addcomment
             .commentblock
               コメントを追加する
+    %h3
+      いいねしている投稿
+      = @user.liked_tweets.each do |post|
+        = tweet.user.name
+        = tweet.content
 
