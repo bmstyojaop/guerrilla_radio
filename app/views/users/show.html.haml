@@ -27,17 +27,18 @@
           %span<>
           = tweet.text
         .Comments
-          .Comments__reply
-            %span<friendname>
-            ここにリプライが表示されますここにリプライが表示されますここにリプライが表示されますここにリプライが表示されますここにリプライが表示されます
-          .Comments__reply
-            %span<friendname>
-            ここにリプライが表示されますここにリプライが表示されますここにリプライが表示されますここにリプライが表示されますここにリプライが表示されます
-          .Comments__reply
-            %span<friendname>
-            ここにリプライが表示されますここにリプライが表示されますここにリプライが表示されますここにリプライが表示されますここにリプライが表示されます
-        
-          .Addcomment
-            .commentblock
-              コメントを追加する
+          %h1 ユーザー詳細ページ
+          %h3= @user.email
+          %h2 投稿内容
+          - @user.posts.each do |post|
+            %a{href: "/posts/#{post.id}"}= post.content
+            %hr/
+          %h3 いいねしている投稿
+          - @user.liked_posts.each do |post|
+            = post.user.email
+            = post.content
+          = link_to "ユーザー一覧へ", users_path
+          = link_to "ホームへ戻る", posts_path
+                    
+          
 

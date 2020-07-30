@@ -1,6 +1,7 @@
 class TweetsController < ApplicationController
   before_action :set_tweet, only: [:edit, :show]
   before_action :move_to_index, except: [:index, :show, :search]
+  before_action :authenticate_user!, only: [:show, :create]
 
   def index
     @tweets = Tweet.includes(:user).order("created_at DESC")
@@ -12,13 +13,14 @@ class TweetsController < ApplicationController
 
   def create
     @tweet = Tweet.create(tweet_params)
-    if @tweet.save
-      tag_list = tag_params[:tag_names].split(/[[:blank:]]+/).select(&:present?)
-      @tweet.save_tags(tag_list)
-      redirect_to @tweet
-    else
-      render 'new'
-    end
+    @tweet.user_id = current_user.id
+    # if @tweet.save
+    #   tag_list = tag_params[:tag_names].split(/[[:blank:]]+/).select(&:present?)
+    #   @tweet.save_tags(tag_list)
+    #   redirect_to @tweet
+    # else
+    #   render 'new'
+    # end
   end
 
   def destroy
@@ -35,6 +37,7 @@ class TweetsController < ApplicationController
   end
 
   def show
+    @like = Like.new
     @comment = Comment.new
     @comments = @tweet.comments.includes(:user)
   end
