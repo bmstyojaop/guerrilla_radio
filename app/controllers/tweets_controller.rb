@@ -11,7 +11,14 @@ class TweetsController < ApplicationController
   end
 
   def create
-    Tweet.create(tweet_params)
+    @tweet = Tweet.create(tweet_params)
+    if @tweet.save
+      tag_list = tag_params[:tag_names].split(/[[:blank:]]+/).select(&:present?)
+      @tweet.save_tags(tag_list)
+      redirect_to @tweet
+    else
+      render 'new'
+    end
   end
 
   def destroy
@@ -49,5 +56,9 @@ class TweetsController < ApplicationController
     unless user_signed_in?
       redirect_to action: :index
     end
+  end
+
+  def tag_params
+    params.require(:tweet).permit(:tag_names)
   end
 end
