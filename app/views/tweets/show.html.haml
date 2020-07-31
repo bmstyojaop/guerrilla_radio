@@ -2,21 +2,33 @@
   %section.TweetField
     %article.PostedItem
       .ArticleHeader
-        - if user_signed_in? && current_user.id == @tweet.user_id
-          %ul.More
-            %li 
-              = link_to "#", class: "More" do
-                = icon('fas', 'bars')
-              %ul
+        %ul.More
+          %li 
+            = icon('fas', 'bars')
+            %ul
+              %li
+                = link_to '詳細', tweet_path(@tweet.id), method: :get
+              - if user_signed_in? && current_user.id == @tweet.user_id
                 %li
                   = link_to '編集', edit_tweet_path(@tweet.id), method: :get
                 %li
                   = link_to '削除', tweet_path(@tweet.id), method: :delete
-                
       .Picture
         .content_post{style: "background-image: url(#{@tweet.image})"}
       .ReactionBtn
-        = icon('fas', 'star', class: 'ReactionBtn__good')
+        - if current_user.already_liked?(@tweet)
+          = button_to tweet_like_path(@tweet), method: :delete do
+            = icon('fas', 'star', class: 'ReactionBtn__good')
+        - else
+          = button_to tweet_likes_path(@tweet) do
+            = icon('far', 'star', class: 'ReactionBtn__good')
+        %h3
+          いいね件数: 
+          = @tweet.likes.count
+        -# %h2 いいねしたユーザー
+        -# - @tweet.liked_users.each do |user|
+        -#   %li= user.email
+        -# = link_to "ホームへ戻る", tweets_path
       .Details 
         = @tweet.user.nickname
         %span<>:
