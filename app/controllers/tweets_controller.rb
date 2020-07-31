@@ -12,15 +12,15 @@ class TweetsController < ApplicationController
   end
 
   def create
-    @tweet = Tweet.create(tweet_params)
+    @tweet = Tweet.new(tweet_params)
     @tweet.user_id = current_user.id
-    # if @tweet.save
-    #   tag_list = tag_params[:tag_names].split(/[[:blank:]]+/).select(&:present?)
-    #   @tweet.save_tags(tag_list)
-    #   redirect_to @tweet
-    # else
-    #   render 'new'
-    # end
+    if @tweet.save
+      tag_list = tag_params[:tag_names].split(/[[:blank:]]+/).select(&:present?)
+      @tweet.save_tags(tag_list)
+      redirect_to @tweet
+    else
+      render 'new'
+    end
   end
 
   def destroy
@@ -64,4 +64,6 @@ class TweetsController < ApplicationController
   def tag_params
     params.require(:tweet).permit(:tag_names)
   end
+
+  
 end
