@@ -1,0 +1,7 @@
+%h3 いいねしている投稿
+- @user.liked_tweets.each do |tweet|
+  = tweet.user.email
+  = tweet.image
+= link_to "ユーザー一覧へ", users_path
+= link_to "ホームへ戻る", tweets_path
+                    
