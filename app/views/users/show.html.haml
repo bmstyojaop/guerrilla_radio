@@ -26,19 +26,3 @@
           = tweet.user.nickname
           %span<>
           = tweet.text
-        .Comments
-          %h1 ユーザー詳細ページ
-          %h3= @user.email
-          %h2 投稿内容
-          - @user.posts.each do |tweet|
-            %a{href: "/posts/#{tweet.id}"}= tweet.content
-            %hr/
-          %h3 いいねしている投稿
-          - @user.liked_posts.each do |tweet|
-            = tweet.user.email
-            = tweet.content
-          = link_to "ユーザー一覧へ", users_path
-          = link_to "ホームへ戻る", tweets_path
-                    
-          
-
