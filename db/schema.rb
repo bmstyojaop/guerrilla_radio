@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_07_30_094003) do
+ActiveRecord::Schema.define(version: 2020_08_01_092625) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -32,6 +32,21 @@ ActiveRecord::Schema.define(version: 2020_07_30_094003) do
     t.index ["user_id"], name: "index_likes_on_user_id"
   end
 
+  create_table "tags", force: :cascade do |t|
+    t.string "tag_name", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["tag_name"], name: "index_tags_on_tag_name", unique: true
+  end
+
+  create_table "tweet_tag_relations", force: :cascade do |t|
+    t.bigint "tweet_id", null: false
+    t.bigint "tag_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["tag_id"], name: "index_tweet_tag_relations_on_tag_id"
+    t.index ["tweet_id"], name: "index_tweet_tag_relations_on_tweet_id"
+  end
 
   create_table "tweets", force: :cascade do |t|
     t.string "name"
@@ -57,4 +72,6 @@ ActiveRecord::Schema.define(version: 2020_07_30_094003) do
 
   add_foreign_key "likes", "tweets"
   add_foreign_key "likes", "users"
+  add_foreign_key "tweet_tag_relations", "tags"
+  add_foreign_key "tweet_tag_relations", "tweets"
 end
