@@ -1,7 +1,28 @@
-%h3 いいねしている投稿
-- @user.liked_tweets.each do |tweet|
-  = tweet.user.email
-  = tweet.image
-= link_to "ユーザー一覧へ", users_path
-= link_to "ホームへ戻る", tweets_path
-                    
+%main.Index--like
+  %h1
+    = @nickname
+    さんのコレクション
+  %section.TweetField--like
+    - @user.liked_tweets.each do |tweet|
+      %article.PostedItem--like
+        .ArticleHeader--like
+          %ul.More--like
+            %li 
+              = icon('fas', 'bars')
+              %ul
+                %li
+                  = link_to '詳細', tweet_path(tweet.id), method: :get
+                - if user_signed_in? && current_user.id == tweet.user_id
+                  %li
+                    = link_to '編集', edit_tweet_path(tweet.id), method: :get
+                  %li
+                    = link_to '削除', tweet_path(tweet.id), method: :delete
+                
+        .Picture
+          .content_post{style: "background-image: url(#{tweet.image})"}
+        .ReactionBtn
+          = icon('fas', 'star', class: 'ReactionBtn__good')
+          - tweet.tags.each do |tag|
+            = tag.tag_name
+
+

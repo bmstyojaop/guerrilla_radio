@@ -60,12 +60,18 @@
           overflow: visible;
       }
       .Picture{
-        // background: crimson;
+        background-color: rgba(49, 49, 49, 0.5);
         height: 600px;
         width: 600px;
         .content_post {
+          display: flex;
+          justify-content: center;
+          align-items: center;
           height: 100%;
           width: 100%;
+          padding: 30px;
+          background-size: contain;
+          background-repeat: no-repeat;
         }
       }
       .ReactionBtn {
