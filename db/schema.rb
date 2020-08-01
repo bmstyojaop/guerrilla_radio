@@ -32,21 +32,6 @@ ActiveRecord::Schema.define(version: 2020_07_30_094003) do
     t.index ["user_id"], name: "index_likes_on_user_id"
   end
 
-  create_table "tags", force: :cascade do |t|
-    t.string "tag_name", null: false
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["tag_name"], name: "index_tags_on_tag_name", unique: true
-  end
-
-  create_table "tweet_tag_relations", force: :cascade do |t|
-    t.bigint "tweet_id"
-    t.bigint "tag_id"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["tag_id"], name: "index_tweet_tag_relations_on_tag_id"
-    t.index ["tweet_id"], name: "index_tweet_tag_relations_on_tweet_id"
-  end
 
   create_table "tweets", force: :cascade do |t|
     t.string "name"
