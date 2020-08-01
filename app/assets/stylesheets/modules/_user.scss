@@ -1,4 +1,4 @@
-$content-width: 160px;
+$content-width--like: 160px;
 .Index--like {
   padding-top: 70px;
   height: 100%;
@@ -37,7 +37,7 @@ $content-width: 160px;
     // overflow: scroll;
     .PostedItem--like {
       // background: midnightblue;
-      width: $content-width;
+      width: $content-width--like;
       height: auto;
       margin-left: 30px;
       margin-right: 30px;
@@ -80,7 +80,7 @@ $content-width: 160px;
       .Picture{
         background-color: rgba(49, 49, 49, 0.5);
         height: 160px;
-        width: $content-width;
+        width: $content-width--like;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -96,7 +96,7 @@ $content-width: 160px;
       }
       .ReactionBtn {
         background: darkviolet;
-        width: $content-width;
+        width: $content-width--like;
         height: 40px;
         background: wheat;
         padding: 0 20px;
@@ -116,7 +116,7 @@ $content-width: 160px;
       .Comments{
         // background: lightyellow;
         height: auto;
-        width: $content-width;
+        width: $content-width--like;
         min-height: 60px;
         padding: 7px 0;
 
@@ -126,14 +126,14 @@ $content-width: 160px;
         align-items: center;
         &__reply {
           height: 200px;
-          width: $content-width;
+          width: $content-width--like;
           display: flex;
           flex-direction: column;
           border-right: 1px solid lightgrey;
           border-left: 1px solid lightgrey;
           overflow: scroll;
           &--individual{
-            width: $content-width;
+            width: $content-width--like;
             border-top: 1px solid lightgray;
             padding: 10px 15px;
             overflow-wrap: break-word;

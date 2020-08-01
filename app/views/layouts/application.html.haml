@@ -11,7 +11,7 @@
     .wrapper
       .Header
         .Header__icon
-          = link_to image_tag("logo.png", alt: "顔写真"), root_path
+          = link_to image_tag("logo.png", alt: "ロゴ画像"), root_path
         .Header__search 
           = form_with(url: search_tweets_path, local: true, method: :get, class: "search-form") do |form|
             = form.text_field :keyword, placeholder: "投稿を検索する", class: "search-input"
@@ -19,7 +19,6 @@
 
         - if user_signed_in?
           .Header__items
-            = icon('fas', 'home', class: 'Header__items--icon')
             = link_to new_tweet_path, class: "Header__items--icon" do
               = icon('far', 'plus-square')
             = link_to like_user_path(id: current_user.id) do
@@ -35,8 +34,8 @@
                     = link_to "ログアウト", destroy_user_session_path, method: :delete
         - else
           .Header__items
-            = link_to 'ログイン', new_user_session_path, class: "post"
-            = link_to '新規登録', new_user_registration_path, class: "post"
+            = link_to 'ログイン', new_user_session_path, class: "login"
+            = link_to '新規登録', new_user_registration_path, class: "login"
         
 
       = yield 
