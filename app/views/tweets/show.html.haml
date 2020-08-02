@@ -1,4 +1,4 @@
-%main.Index
+%main.IndexShow
   %section.TweetField
     %article.PostedItem
       .ArticleHeader
@@ -27,26 +27,30 @@
           = @tweet.likes.count
        
       .Details 
+        @
         = @tweet.user.nickname
         %span<>:
         = @tweet.text
-      .Comments
-        .Comments__reply
+    .Comments
+      .Addcomment
+        - if current_user
+          .commentblock
+            = form_with(model: [@tweet, @comment], local: true, id: "new_comment") do |form|
+              = form.text_area :text, placeholder: "コメントを追加", rows: "2"
+              = form.submit "SEND"
+        - else
+          %strong
+            %p ※※※ コメントの投稿には新規登録/ログインが必要です ※※※
+      .ReplyArea
+        .CommentDisplay
           - if @comments
             - @comments.each do |comment|
-              .Comments__reply--individual
+              .CommentDisplay--individual
                 %span
                   %strong
+                    @
                     = link_to comment.user.nickname, "/users/#{comment.user_id}"
-                    
+                    ：
                 = comment.text
-        .Addcomment
-          - if current_user
-            .commentblock
-              = form_with(model: [@tweet, @comment], local: true, id: "new_comment") do |form|
-                = form.text_area :text, placeholder: "コメントする", rows: "2"
-                = form.submit "SEND"
-          - else
-            %strong
-              %p ※※※ コメントの投稿には新規登録/ログインが必要です ※※※              
+    -# .ElseUserItem
 
