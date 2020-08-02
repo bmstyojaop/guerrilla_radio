@@ -80,6 +80,6 @@ test:
 #
 production:
   <<: *default
-  database: guerrilla_radio_production
-  username: guerrilla_radio
-  password: <%= ENV['GUERRILLA_RADIO_DATABASE_PASSWORD'] %>
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
