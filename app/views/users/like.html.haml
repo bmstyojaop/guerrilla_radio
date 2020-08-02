@@ -1,12 +1,12 @@
-%main.Index--like
+%main.IndexLike
   %h1
     = @nickname
     さんのコレクション
-  %section.TweetField--like
+  %section.TweetField
     - @user.liked_tweets.each do |tweet|
-      %article.PostedItem--like
-        .ArticleHeader--like
-          %ul.More--like
+      %article.PostedItem
+        .ArticleHeader
+          %ul.More
             %li 
               = icon('fas', 'bars')
               %ul
