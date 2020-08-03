@@ -20,10 +20,10 @@
         .content_post{style: "background-image: url(#{@tweet.image})"}
       .ReactionBtn
         - if current_user.already_liked?(@tweet)
-          = button_to tweet_like_path(@tweet), id: "tweet_like_destroy", method: :delete, remote: true do
+          = button_to tweet_like_path(@tweet), method: :delete do
             = icon('fas', 'star', class: 'ReactionBtn__good')
         - else
-          = button_to tweet_likes_path(@tweet), id: "tweet_like_create", method: :post, remote: true do
+          = button_to tweet_likes_path(@tweet), method: :post do
             = icon('far', 'star', class: 'ReactionBtn__good')
         %h3
           LIKE：
