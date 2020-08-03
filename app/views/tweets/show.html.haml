@@ -4,7 +4,7 @@
       .ArticleHeader
         %h2
           @
-          = @tweet.user.nickname
+          = link_to @tweet.user.nickname, "/users/#{@tweet.user_id}"
         %ul.More
           %li 
             = icon('fas', 'bars')

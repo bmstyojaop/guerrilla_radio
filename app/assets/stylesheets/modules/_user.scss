@@ -99,7 +99,7 @@ $content-width--like: 160px;
         }
       }
       .ReactionBtn {
-        background: darkviolet;
+        // background: darkviolet;
         width: $content-width--like;
         height: 40px;
         background: wheat;
@@ -110,7 +110,7 @@ $content-width--like: 160px;
         }
       }
       .Details {
-        background: rgb(41, 87, 90);
+        background-color: rgba(255, 255, 255, 0.5);
         height: auto;
         padding: 7px 15px;
         

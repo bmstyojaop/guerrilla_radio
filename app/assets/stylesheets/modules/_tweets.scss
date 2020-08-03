@@ -36,11 +36,16 @@ $content-width: 400px;
         h2 {
           font-size: 150%;
           font-family: 'arial unicode ms';
+          a {
+            text-decoration: none;
+            color: black;
+          }
         }
         .More > li {
           width: 20px;
           font-size: 200%;
           position: relative;
+          list-style: none;
           ul {
             position: absolute;
             li {
@@ -56,10 +61,12 @@ $content-width: 400px;
             height: 0;
             overflow: hidden;
             transition: .5s;
+            :hover {
+              background-color: rgba(255, 255, 255, 0.8);
+            }
             a {
-              border-top: 1px solid #eee;
-              background-color: white;
-              color: black;
+              border: 1px solid #eee;
+              color: gainsboro;
               display: block;
               height: 2rem;
               line-height: 2rem;
@@ -105,7 +112,7 @@ $content-width: 400px;
         }
       }
       .Details {
-        background: rgb(41, 87, 90);
+        background-color: rgba(255, 255, 255, 0.5);
         height: auto;
         padding: 7px 15px;
         

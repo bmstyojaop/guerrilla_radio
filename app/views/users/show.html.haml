@@ -1,9 +1,8 @@
 %main.IndexLike
+  %h1 
+    = @nickname
+    さんの投稿一覧
   %section.TweetField
-    %p 
-      = @nickname
-      さんの投稿一覧
-
     - @tweets.each do |tweet| 
       %article.PostedItem
         .ArticleHeader
@@ -20,9 +19,5 @@
                 
         .Picture
           .content_post{style: "background-image: url(#{tweet.image})"}
-        .ReactionBtn
-          = icon('fas', 'star', class: 'ReactionBtn__good')
         .Details 
-          = tweet.user.nickname
-          %span<>
-          = tweet.text
+          = tweet.text 
