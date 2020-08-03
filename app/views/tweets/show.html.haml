@@ -38,8 +38,8 @@
         - if current_user
           .commentblock
             = form_with(model: [@tweet, @comment], local: true, id: "new_comment") do |form|
-              = form.text_area :text, placeholder: "コメントを追加", rows: "2"
-              = form.submit "SEND"
+              = form.text_area :text, placeholder: "コメントを追加", rows: "2", class: "textbox"
+              = form.submit "SEND", class: "commentSubmit"
         - else
           %strong
             %p ※※※ コメントの投稿には新規登録/ログインが必要です ※※※
