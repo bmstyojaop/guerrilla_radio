@@ -1,5 +1,5 @@
 .Contents
   .Container
-    = form_with model: @tweet, local: true do |form|
-      %h3 投稿画面
+    = form_with model: @tweet, html: {class: "Form"}, local: true do |form|
+      %h3 NEW POST
       = render partial: "form", locals: {form: form} 

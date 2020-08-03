@@ -7,7 +7,6 @@ $content-width: 400px;
   justify-content: center;
   overflow: scroll;
   .TweetField {
-    // background: mediumaquamarine;
     height: 100%;
     width: 100%;
     padding-top: 30px;
@@ -16,8 +15,6 @@ $content-width: 400px;
     margin-bottom: 0;
     display: flex;
     align-items: center;
-    // justify-content: center;
-    // flex-direction: column;
     overflow: scroll;
 
     .PostedItem {
@@ -197,23 +194,53 @@ $content-width: 400px;
     margin-bottom: 10px;
   }
   .Container{
-    background-color: rgba(0, 0, 0,0.1);
-    height:　526px;
+    height: 526px;
     width: 660px;
     margin: 20px 0;
     padding: 30px;
-    box-shadow: 0 0 10px rgba(24, 19, 19, 0.4);
     display: flex;
     flex-direction: column;
-    form {
-      height: 100%;
+    // justify-content: center;
+    .Form {
+      height: auto;
       width: 100%;
-      // max-width: ;
-      display: block;
       display: flex;
       flex-direction: column;
-      border-radius: 5px;
+      align-items: center;
+      border-radius: 10px;
+      background-color: rgba(255, 255, 255, 0.3);
+
+      &__title {
+        width: 80%;
+      }
+      ::placeholder{
+        text-align: center; 
+      }
       
+      &__inputImage {
+        background-color: white;
+        width: 80%;
+        border: 0.5px solid rgb(100, 100, 100);
+        color: rgb(150, 150, 150);
+        cursor: pointer;
+        .Hidden {
+          display: none;
+        }
+      }
+      &__tag{
+        width: 80%;
+      }
+      &__submit {
+        background-color: darkturquoise;
+        color: white;
+        height: 35px;
+        width: 100px;
+        margin-top: 8px;
+        margin-bottom: 30px;
+        border-radius: 10%;
+        font-size: larger;
+        cursor: pointer;
+      }
     }
   }
 }

@@ -2,6 +2,9 @@
   %section.TweetField
     %article.PostedItem
       .ArticleHeader
+        %h2
+          @
+          = @tweet.user.nickname
         %ul.More
           %li 
             = icon('fas', 'bars')
@@ -23,14 +26,13 @@
           = button_to tweet_likes_path(@tweet) do
             = icon('far', 'star', class: 'ReactionBtn__good')
         %h3
-          いいね件数: 
+          LIKE：
           = @tweet.likes.count
-       
       .Details 
-        @
-        = @tweet.user.nickname
-        %span<>:
         = @tweet.text
+        - @tweet.tags.each do |tag|
+          %span #
+          = tag.tag_name
     .Comments
       .Addcomment
         - if current_user
@@ -52,5 +54,4 @@
                     = link_to comment.user.nickname, "/users/#{comment.user_id}"
                     ：
                 = comment.text
-    -# .ElseUserItem
-
+                

@@ -16,4 +16,8 @@
               = link_to '削除', tweet_path(tweet.id), method: :delete
   .Picture
     .content_post{style: "background-image: url(#{tweet.image})"}
-
+  .Details 
+    = tweet.text
+    - tweet.tags.each do |tag|
+      %span #
+      = tag.tag_name 

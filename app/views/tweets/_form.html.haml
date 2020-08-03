@@ -1,4 +1,7 @@
-= form.text_field :text, placeholder: "タイトル", rows: "10"
-= form.text_field :image, placeholder: "写真", rows: "10"
-= form.text_field :tag_names, placeholder: "タグ"
-= form.submit "投稿"
+= form.text_field :text, class: 'Form__title', placeholder: "タイトル", rows: "10"
+= form.label :image, class: 'Form__inputImage' do
+  = icon('far', 'image', class: 'Form__icon')
+  = form.file_field :image, class: 'Hidden'
+  画像を選択
+= form.text_field :tag_names, class: 'Form__tag', placeholder: "タグ"
+= form.submit "投稿", class: 'Form__submit'

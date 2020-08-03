@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   end
   
   resources :tweets do
-    resources :likes, only: [:create, :destroy]
+    resources :likes, only: [:create, :destroy] 
     resources :comments, only: :create
     collection do
       get 'search'
