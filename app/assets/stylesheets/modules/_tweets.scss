@@ -63,6 +63,7 @@ $content-width: 400px;
             transition: .5s;
             :hover {
               background-color: rgba(255, 255, 255, 0.8);
+              color: black;
             }
             a {
               border: 1px solid #eee;
@@ -80,6 +81,7 @@ $content-width: 400px;
       .More li:hover > ul > li {
           height: 2rem;
           overflow: visible;
+
       }
       .Picture{
         background-color: rgba(49, 49, 49, 0.5);
