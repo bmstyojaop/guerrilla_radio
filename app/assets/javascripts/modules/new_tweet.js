@@ -10,7 +10,7 @@ $(function(){
     //読み込みが完了すると、srcにfileのURLを格納
     fileReader.onloadend = function() {
       let src = fileReader.result
-      let html= `<img src="${src}" width="114" height="80">`
+      let html= `<img class="Form__inputImage "src="${src}" width="114" height="80">`
       //image_box__container要素の前にhtmlを差し込む
       // document.getElementById('image-box').innerHTML = `${html}`;
       $('#image-box').before(html);

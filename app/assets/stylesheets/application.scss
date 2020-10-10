@@ -5,6 +5,7 @@
 @import "modules/user";
 @import "modules/tweetsShow";
 @import "modules/reguration";
+@import "modules/tweetForm";
 * {
   box-sizing: border-box;
 }
@@ -12,7 +13,7 @@
 .wrapper{
   background-image: url(top_image.jpeg);
   background-size: cover;
-  height: 100vh;
+  height: 100%;
 }
 .Header {
   background: lightblue;
