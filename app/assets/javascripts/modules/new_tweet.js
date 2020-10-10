@@ -12,8 +12,11 @@ $(function(){
       let src = fileReader.result
       let html= `<img src="${src}" width="114" height="80">`
       //image_box__container要素の前にhtmlを差し込む
-      $('#image-box__container').before(html);
+      // document.getElementById('image-box').innerHTML = `${html}`;
+      $('#image-box').before(html);
+      $('#image-box').css('display', 'none')
     }
+    console.log(file);
     fileReader.readAsDataURL(file);
   });
 });
