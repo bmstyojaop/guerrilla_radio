@@ -1,7 +1,15 @@
 = form.text_field :text, class: 'Form__title', placeholder: "タイトル", rows: "10"
-= form.label :image, class: 'Form__inputImage' do
-  = icon('far', 'image', class: 'Form__icon')
-  = form.file_field :image, class: 'Hidden'
-  画像を選択
+
+-# = form.label :image, class: 'Form__inputImage' do
+-#   = icon('far', 'image', class: 'Form__icon')
+-#   = form.file_field :image, type: 'file', class: 'Hidden' id:"img-file"
+-#   画像を選択
+#image-box-1
+  .item-num-0#image-box__container
+    = form.fields_for :images do |i|
+      .input-area
+        = i.file_field :image, type: 'file', name: "item[images_attributes][][image_url]", value:"", style: "display:none", id:"img-file"
+        %label{for: "img-file"}
+          %i.fas.fa-camera
 = form.text_field :tag_names, class: 'Form__tag', placeholder: "タグ"
 = form.submit "投稿", class: 'Form__submit'

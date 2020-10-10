@@ -82,7 +82,7 @@ $(function() {
         });
       }
       else {
-        appendErrMsgToHTML("一致するツイートがありません");
+        appendErrMsgToHTML("一致する投稿がありません");
       }
     })
     .fail(function() {
