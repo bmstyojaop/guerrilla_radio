@@ -1,12 +1,21 @@
 class LikesController < ApplicationController
-  def create
-    @like = current_user.likes.create(tweet_id: params[:tweet_id])
-    redirect_back(fallback_location: root_path)
+  before_action :set_variables
+
+  def like
+    like = current_user.likes.new(story_id: @story.id)
+    like.save
   end
 
-  def destroy
-    @like = Like.find_by(tweet_id: params[:tweet_id], user_id: current_user.id)
-    @like.destroy
-    redirect_back(fallback_location: root_path)
+  def unlike
+    like = current_user.likes.find_by(story_id: @story.id)
+    like.destroy
   end
+
+  private
+
+  def set_variables
+    @story = Story.find(params[:story_id])
+    @id_name = "#like-link-#{@tweet.id}"
+  end
+
 end

@@ -20,4 +20,5 @@
     = tweet.text
     - tweet.tags.each do |tag|
       %span #
-      = tag.tag_name 
+      = tag.tag_name
+    = render partial: "likes/like", locals: { tweet: tweet } 
