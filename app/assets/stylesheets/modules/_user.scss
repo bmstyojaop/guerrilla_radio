@@ -15,12 +15,12 @@ $content-width--like: 160px;
     width: 90%;
     font-size: 50px;
     font-weight: bold;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     color: rgba(0, 0, 0, 0.8);
     -webkit-text-stroke: 1px  rgba(0,0,0,0.4);
     display: flex;
     justify-content: center;
     box-shadow: 10px 10px 10px rgba(0,0,0,0.4);
+    user-select: none;
   }
   .TweetField {
     height: 100%;
