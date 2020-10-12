@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'likes/create'
   devise_for :users
   root to: 'tweets#index'
 
