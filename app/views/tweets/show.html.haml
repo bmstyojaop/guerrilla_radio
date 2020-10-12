@@ -18,16 +18,7 @@
                   = link_to '削除', tweet_path(@tweet.id), method: :delete
       .Picture
         .content_post{style: "background-image: url(#{@tweet.image})"}
-      .ReactionBtn
-        - if current_user.already_liked?(@tweet)
-          = button_to tweet_like_path(@tweet), method: :delete do
-            = icon('fas', 'star', class: 'ReactionBtn__good')
-        - else
-          = button_to tweet_likes_path(@tweet), method: :post do
-            = icon('far', 'star', class: 'ReactionBtn__good')
-        %h3
-          LIKE：
-          = @tweet.likes.count
+      
       .Details 
         = @tweet.text
         - @tweet.tags.each do |tag|
