@@ -21,8 +21,8 @@
           .Header__items
             = link_to new_tweet_path, class: "Header__items--icon" do
               = icon('far', 'plus-square')
-            = link_to like_user_path(id: current_user.id) do
-              = icon('far', 'star', class: 'Header__items--icon')
+            -# = link_to like_user_path(id: current_user.id) do
+            -#   = icon('far', 'star', class: 'Header__items--icon')
           .HeaderRight
             %ul.UserMenu
               %li

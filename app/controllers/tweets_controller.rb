@@ -5,6 +5,8 @@ class TweetsController < ApplicationController
 
   def index
     @tweets = Tweet.includes(:user).order("created_at DESC")
+    @favorites = Favorite.where(tweet_id: params[:id])
+    @user_favorite = @favorites.where(user_id: current_user)
   end
 
   def new
@@ -41,7 +43,8 @@ class TweetsController < ApplicationController
   end
 
   def show
-    @like = Like.new
+    @favorites = Favorite.where(tweet_id: params[:id])
+    @user_favorite = @favorites.where(user_id: current_user)
     @comment = Comment.new
     @comments = @tweet.comments.includes(:user)
   end

@@ -3,14 +3,14 @@ Rails.application.routes.draw do
   root to: 'tweets#index'
 
   resources :users, only: [:index, :show] do
-    member do
-      get 'like'
+    collection do 
+      get 'favorites'
     end
   end
   
   resources :tweets do
-    resources :likes, only: [:create, :destroy] 
     resources :comments, only: :create
+    resources :favorites, only: [:create, :destroy]
     collection do
       get 'search'
     end

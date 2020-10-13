@@ -1,27 +1,27 @@
-%main.IndexLike
-  %h1
-    = @nickname
-    さんのコレクション
-  %section.TweetField
-    - @user.liked_tweets.each do |tweet|
-      %article.PostedItem
-        .ArticleHeader
-          %h2
-            @
-            = tweet.user.nickname
-          %ul.More
-            %li 
-              = icon('fas', 'bars')
-              %ul
-                %li
-                  = link_to '詳細', tweet_path(tweet.id), method: :get
-                - if user_signed_in? && current_user.id == tweet.user_id
-                  %li
-                    = link_to '編集', edit_tweet_path(tweet.id), method: :get
-                  %li
-                    = link_to '削除', tweet_path(tweet.id), method: :delete
+-# %main.IndexLike
+-#   %h1
+-#     = @nickname
+-#     さんのコレクション
+-#   %section.TweetField
+-#     - @user.liked_tweets.each do |tweet|
+-#       %article.PostedItem
+-#         .ArticleHeader
+-#           %h2
+-#             @
+-#             = tweet.user.nickname
+-#           %ul.More
+-#             %li 
+-#               = icon('fas', 'bars')
+-#               %ul
+-#                 %li
+-#                   = link_to '詳細', tweet_path(tweet.id), method: :get
+-#                 - if user_signed_in? && current_user.id == tweet.user_id
+-#                   %li
+-#                     = link_to '編集', edit_tweet_path(tweet.id), method: :get
+-#                   %li
+-#                     = link_to '削除', tweet_path(tweet.id), method: :delete
                 
-        .Picture
-          .content_post{style: "background-image: url(#{tweet.image})"}
+-#         .Picture
+-#           .content_post{style: "background-image: url(#{tweet.image})"}
       
 

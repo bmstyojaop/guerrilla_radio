@@ -1,4 +1,4 @@
-%article.PostedItem
+%article.Postedtweet
   .ArticleHeader
     %h2
       @
@@ -18,6 +18,13 @@
     .content_post{style: "background-image: url(#{tweet.image})"}
   .Details 
     = tweet.text
-    - tweet.tags.each do |tag|
-      %span #
-      = tag.tag_name 
+    -# - tweet.tags.each do |tag|
+    -#   %span #
+    -#   = tag.tag_name 
+    .Icon
+      %ul
+        %li
+          = icon('fa', 'star')
+          = tweet.favorites.count
+          .Like
+            = render partial: "favorites/favorite", locals: { tweet: tweet, favorites: @favorites, user_favorite: @user_favorite }

@@ -2,15 +2,13 @@ class Tweet < ApplicationRecord
   mount_uploader :image, ImageUploader
   validates :text, presence: true
   belongs_to :user
-  has_many :comments
-  has_many :tweet_tag_relations, dependent: :destroy
+  has_many :users,       through: :favorites
+  has_many :comments,    dependent: :destroy
+  has_many :favorites,   dependent: :destroy
   has_many :tags, through: :tweet_tag_relations
-  has_many :likes
-  has_many :liked_users, through: :likes, source: :user
+  has_many :tweet_tag_relations, dependent: :destroy
+  
 
-def liked_by?(user)
-  likes.where(user_id: user.id).exists?
-end
   def save_tags(tag_list)
     tag_list.each do |tag|
       unless find_tag = Tag.find_by(tag_name: tag.downcase)
