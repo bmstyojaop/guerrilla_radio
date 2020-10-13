@@ -18,11 +18,11 @@
     .Picture
       .content_post{style: "background-image: url(#{tweet.image})"}
     .Details 
+      = render 'likes/like', tweet: tweet
       = tweet.text
       - tweet.tags.each do |tag|
         %span #
         = tag.tag_name 
-    = render 'likes/like', tweet: tweet
 
 - else
   %article.PostedItem
@@ -44,11 +44,11 @@
     .Picture
       .content_post{style: "background-image: url(#{tweet.image})"}
     .Details 
+      .iine__button
+        ♡️
+        =tweet.likes.count
       = tweet.text
       - tweet.tags.each do |tag|
         %span #
         = tag.tag_name
-    .iine__button
-      ♡️
-      =tweet.likes.count
   
