@@ -21,3 +21,4 @@
     - tweet.tags.each do |tag|
       %span #
       = tag.tag_name 
+  = render 'likes/like', tweet: tweet

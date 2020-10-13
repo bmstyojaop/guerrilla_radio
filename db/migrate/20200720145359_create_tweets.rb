@@ -4,6 +4,8 @@ class CreateTweets < ActiveRecord::Migration[6.0]
       t.string :name
       t.string :text
       t.text :image
+      t.integer :likes_count
+
       t.timestamps
     end
   end
