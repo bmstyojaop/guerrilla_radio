@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
-  devise_for :users
+  devise_for :users, controllers: {
+    registrations: 'users/registrations'
+  }
   root to: 'tweets#index'
 
   resources :users, only: [:index, :show] do
@@ -18,4 +20,8 @@ Rails.application.routes.draw do
 
   post   '/like/:tweet_id' => 'likes#like',   as: 'like'
   delete '/like/:tweet_id' => 'likes#unlike', as: 'unlike'
+
+  devise_scope :user do
+    post 'users/guest_sign_in', to: 'users/sessions#new_guest'
+  end
 end
