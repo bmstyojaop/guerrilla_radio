@@ -10,4 +10,11 @@ class User < ApplicationRecord
   # def already_liked?(tweet)
   #   self.likes.exists?(tweet_id: tweet.id)
   # end
+  def self.guest
+    find_or_create_by!(email: 'guest@example.com') do |user|
+      user.password = SecureRandom.urlsafe_base64
+      user.nickname = 'ゲストさん'
+      # user.confirmed_at = Time.now  # Confirmable を使用している場合は必要
+    end
+  end
 end
