@@ -14,17 +14,7 @@ class TweetsController < ApplicationController
   def create
     @tweet = Tweet.new(tweet_params)
     @tweet.user_id = current_user.id
-    if @tweet.save
-      # delete(" ")で文字列から全ての空白を削除する
-      # split(",")で受け取った文字列をカンマ（,）区切りで配列にする
-      tag_list = tag_params[:tag_names].split(/[[:blank:]]+/).select(&:present?)
-
-      # Article.rb に save_tags()メソッドを定義
-      @tweet.save_tags(tag_list)
-    else
-      render 'new'
-    end
-      
+    @tweet.save
   end
 
   def destroy
@@ -41,7 +31,6 @@ class TweetsController < ApplicationController
   end
 
   def show
-    # @like = Like.new
     @comment = Comment.new
     @comments = @tweet.comments.includes(:user)
   end
@@ -69,7 +58,5 @@ class TweetsController < ApplicationController
     end
   end
 
-  def tag_params
-    params.require(:tweet).permit(:tag_names)
-  end
+  
 end

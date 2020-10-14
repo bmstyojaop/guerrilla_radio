@@ -20,10 +20,7 @@
     .Details 
       = render 'likes/like', tweet: tweet
       = tweet.text
-      - tweet.tags.each do |tag|
-        %span #
-        = tag.tag_name 
-
+      
 - else
   %article.PostedItem
     .ArticleHeader
@@ -48,7 +45,4 @@
         ♡️
         =tweet.likes.count
       = tweet.text
-      - tweet.tags.each do |tag|
-        %span #
-        = tag.tag_name
   
