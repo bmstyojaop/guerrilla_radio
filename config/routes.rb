@@ -15,4 +15,7 @@ Rails.application.routes.draw do
       get 'search'
     end
   end
+
+  post   '/like/:tweet_id' => 'likes#like',   as: 'like'
+  delete '/like/:tweet_id' => 'likes#unlike', as: 'unlike'
 end

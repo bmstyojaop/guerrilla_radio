@@ -1,9 +1,9 @@
 %main.IndexLike
   %h1
     = @nickname
-    さんのコレクション
+    さんのお気に入りコレクション
   %section.TweetField
-    - @user.liked_tweets.each do |tweet|
+    - @user.like_tweets.each do |tweet|
       %article.PostedItem
         .ArticleHeader
           %h2

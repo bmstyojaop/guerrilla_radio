@@ -1,0 +1,20 @@
+.AccountPage
+  .AccountPage__title
+    %h2 ログイン
+  .AccountPage__form
+    = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+      = devise_error_messages!
+      .FormField
+        .FormField__label--normal
+          = f.label :email
+        %br/
+        .FormField__input--normal
+          = f.email_field :email, autofocus: true, autocomplete: "email"
+      .FormField
+        .FormField__label--normal
+          = f.label :password
+        %br/
+        .FormField__input--normal
+          = f.password_field :password, autocomplete: "current-password"
+      .Action
+        = f.submit "ログイン"
