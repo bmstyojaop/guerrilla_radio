@@ -89,7 +89,6 @@
       }
     }
     &--icon {
-      margin-right: 20px;
       font-size: 35px;
       -webkit-text-stroke: 1px goldenrod;
     }
@@ -140,6 +139,14 @@
     height: 2rem;
     overflow: visible;
   }
+
+  // &__login {
+  //   width: 100%;
+  //   display: flex;
+  //   align-items: center;
+  //   text-decoration: none;
+  //   color: black;
+  //   &--link {
   //     background-color: white;
   //     height: 100%;
   //     padding: 4px;
