@@ -1,7 +1,7 @@
 %main.IndexLike
   %h1
     = @nickname
-    さんのお気に入りコレクション
+    のお気に入りコレクション
   %section.TweetField
     - @user.like_tweets.each do |tweet|
       %article.PostedItem
@@ -17,7 +17,7 @@
                   = link_to '詳細', tweet_path(tweet.id), method: :get
                 - if user_signed_in? && current_user.id == tweet.user_id
                   %li
-                    = link_to '編集', edit_tweet_path(tweet.id), method: :get
+                    = '編集', edit_tweet_path(tweet.id), method: :get
                   %li
                     = link_to '削除', tweet_path(tweet.id), method: :delete
                 

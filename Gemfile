@@ -76,6 +76,10 @@ gem 'mini_magick'
 
 gem 'jquery-rails'
 
+gem 'materialize-sass', '~> 1.0.0'
+
+gem 'material_icons'
+
 group :production do
   gem 'pg', '>= 0.18', '< 2.0'
 end

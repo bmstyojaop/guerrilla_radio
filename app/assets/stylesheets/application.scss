@@ -2,25 +2,14 @@
 @import "modules/tweets";
 @import "font-awesome-sprockets";
 @import "font-awesome";
+@import "likes";
 @import "modules/user";
 @import "modules/tweetsShow";
-@import "modules/reguration";
+@import "modules/registration";
 @import "modules/tweetForm";
-.LikeLink{
-  a {
-    text-decoration: none;
-    color: #000;
-  }
-  &__btn{
-    line-height: 42px;
-    color: linear-gradient(to right, #feb400, #FFE300);
-    font-size: 14px;
-    display: inline-block;
-    padding: 0 18px;
-    border-radius: 100px;
-    font-weight: bold;
-  }
-}
+@import "modules/_header";
+
+
 * {
   box-sizing: border-box;
 }
@@ -38,131 +27,6 @@ body {
   background-image: url(top_image.jpeg);
   background-size: cover;
   height: 100vh;
-}
-.Header {
-  background: lightblue;
-  height: 54px;
-  width: 100vw;
-  padding: 0 20px;
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
-  border-top: 4px solid #00376b;
-  border-bottom: 4px solid #00376b;
-  position: fixed;
-  background-color: #edf9fa;
-  z-index:9999;
-  background-image: url(header-image.jpeg);
-  background-size: cover;
-  &__icon{
-    height: 38px;
-    width: 100% ;
-    line-height: 34px;
-    
-    img {
-      background-color: rgba(255, 255, 255, 0.8);
-      height: 100%;
-      width: 150px;
-      border-radius: 10px;
-    }
-    img:active{
-      cursor: pointer;
-      opacity: 0.8;
-    }
-  }
-  &__search{
-    // background: lightgoldenrodyellow;
-    height: 28px;
-    width: 215px;
-    form {
-      display: flex;
-      .search-btn {
-        background-color: rgb(235, 237, 240);
-        border-radius: 5px;
-        border: 1px solid rgb(202, 202, 218);
-      }
-    }
-    ::placeholder{
-      text-align: center;
-    }
-  }
-  
-  &__items {
-    height: 40px;
-    width: 100%;
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    
-    text-decoration: none;
-    color: black;
-    a {
-      text-decoration: none;
-      color: black;
-    }
-    .login {
-      background-color: white;
-      height: 100%;
-      padding: 4px;
-      margin-left: 20px;
-      text-decoration: none;
-      display: block;
-      border: 3px solid lightgray;
-      color: mediumturquoise;
-      border-radius: 5px;
-    }
-    &--icon {
-      margin-right: 20px;
-      font-size: 35px;
-      -webkit-text-stroke: 1px goldenrod;
-    }
-  }
-  .HeaderRight{
-    width: 100%;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    .UserMenu > li {
-      
-      text-shadow: 2px 2px 3px rgba(21, 16, 16, 0.6);
-      font-size: 50px;
-      color: gainsboro;
-      li {
-        width: auto;
-        font-size: 20px;
-      }
-    }
-    li {
-      list-style: none;
-      position: relative;
-      ul {
-        position: absolute;
-        li {
-          height: 0;
-          overflow: hidden;
-          transition: .5s;
-          :hover {
-            background-color: rgba(255, 255, 255, 0.8);
-          }
-          a {
-            border: 1px solid #eee;
-            color: gainsboro;
-            display: block;
-            height: 2rem;
-            line-height: 2rem;
-            text-align: center;
-            text-decoration: none;
-            width: 100%;
-          }
-        }
-      }
-    }
-  }
-  .UserMenu li:hover > ul > li {
-    height: 2rem;
-    overflow: visible;
-  }
 }
 
 .FixBox {
