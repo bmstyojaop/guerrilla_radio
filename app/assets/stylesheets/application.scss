@@ -4,25 +4,11 @@
 @import "font-awesome";
 @import "modules/user";
 @import "modules/tweetsShow";
-@import "modules/reguration";
+@import "modules/registration";
 @import "modules/tweetForm";
 @import "modules/_header";
 
-.LikeLink{
-  a {
-    text-decoration: none;
-    color: #000;
-  }
-  &__btn{
-    line-height: 42px;
-    color: linear-gradient(to right, #feb400, #FFE300);
-    font-size: 14px;
-    display: inline-block;
-    padding: 0 18px;
-    border-radius: 100px;
-    font-weight: bold;
-  }
-}
+
 * {
   box-sizing: border-box;
 }
