@@ -1,0 +1,28 @@
+.Header
+  .Header__icon
+    = link_to image_tag("logo.png", alt: "ロゴ画像"), root_path
+  .Header__search 
+    = form_with(url: search_tweets_path, local: true, method: :get, class: "search-form") do |form|
+      = form.text_field :keyword, placeholder: "投稿を検索する", class: "Header__search--input"
+      = form.submit "検索", class: "SearchBtn"
+
+  - if user_signed_in?
+    .Header__items
+      = link_to new_tweet_path, class: "Header__items--icon" do
+        = icon('far', 'plus-square')
+      = link_to like_user_path(id: current_user.id) do
+        = icon('far', 'star', class: 'Header__items--icon')
+    .HeaderRight
+      %ul.UserMenu
+        %li
+          = current_user.nickname
+          %ul
+            %li
+              = link_to "マイページ", "/users/#{current_user.id}"
+            %li
+              = link_to "ログアウト", destroy_user_session_path, method: :delete
+  - else
+    .Header__items
+      = link_to 'ゲストログイン(閲覧用)', users_guest_sign_in_path, method: :post, class: "login"
+      = link_to 'ログイン', new_user_session_path, class: "login"
+      = link_to '新規登録', new_user_registration_path, class: "login"
