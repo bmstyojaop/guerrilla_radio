@@ -1,10 +1,19 @@
 # Guerrilla Radio
-READ.MEをご覧いただきありがとうございます。
-本アプリのテーマは音楽機材投稿アプリです。
+　READ.MEをご覧いただきありがとうございます。  
+　本アプリのテーマは音楽機材投稿アプリです。音楽好き同士で機材を見せあったり、投稿された機材をお気に入りとしてコレクションしたりできるアプリケーションを目指しました。  是非実際に触って確かめてください。  
+　日々改良しながら、技術を上げていきたいと思いますので、アドバイス等いただけましたら幸いです。
 
-本番環境URL: https://guerrillaradio.herokuapp.com/
+# 目次
+* 本番環境URL
+* 動作確認方法
+* DB設計
+* 本アプリケーションの紹介
 
-動作確認方法  
+
+# 本番環境URL
+https://guerrillaradio.herokuapp.com/
+
+# 動作確認方法  
 URL(https://guerrillaradio.herokuapp.com/) へアクセスしていただき、  
 「ゲストログイン（閲覧用）」をしてご確認ください。
 
@@ -59,3 +68,6 @@ URL(https://guerrillaradio.herokuapp.com/) へアクセスしていただき、
 ### Association
 - belongs_to :user
 - belongs_to :tweet
+  
+  
+# アプリケーションの説明
