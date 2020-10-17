@@ -3,3 +3,4 @@ class AddIndexToTweets < ActiveRecord::Migration[6.0]
     add_index :tweets, :text, length: 32
   end
 end
+ 

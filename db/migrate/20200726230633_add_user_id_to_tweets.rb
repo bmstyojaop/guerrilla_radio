@@ -3,3 +3,4 @@ class AddUserIdToTweets < ActiveRecord::Migration[6.0]
     add_column :tweets, :user_id, :integer
   end
 end
+ 
