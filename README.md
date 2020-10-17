@@ -78,7 +78,8 @@ URL(https://guerrillaradio.herokuapp.com/) へアクセスしていただき、
 
 ## 検索機能
 ヘッダー中央に位置する検索窓から投稿の検索を行うことができます。
-![2828D735-94BE-4D22-ACAE-999A5D99CD4F_1_105_c](https://user-images.githubusercontent.com/67671210/96331311-4fceef80-1097-11eb-9c44-1e6ddf74d740.jpeg)
+![search](https://user-images.githubusercontent.com/67671210/96339908-72322e80-10d2-11eb-8028-0d77e2287944.gif)
+
 
 ## 投稿機能
 新規投稿時の画面です。
@@ -88,17 +89,20 @@ URL(https://guerrillaradio.herokuapp.com/) へアクセスしていただき、
 
 ## お気に入り機能
 いいねボタンです。クリックすると「お気に入り」がつき、もう一度クリックすると「お気に入り」が外れます。
-![4E0ECB1F-72F4-4AE6-9279-EAA104082337_4_5005_c](https://user-images.githubusercontent.com/67671210/96332503-434e9500-109f-11eb-976e-787f09e04747.jpeg)
+![like](https://user-images.githubusercontent.com/67671210/96339904-6e061100-10d2-11eb-98f6-ca1c61a2eb6b.gif)
+
 
 
 ## いいね一覧
 ヘッダーの☆マークをクリックすると、お気に入り一覧ページへ遷移します。
-![0EF3CF67-B785-49D1-93EE-611ACC041F78_1_105_c](https://user-images.githubusercontent.com/67671210/96332514-4f3a5700-109f-11eb-94ec-b472d78a1a58.jpeg)
+![likecollection](https://user-images.githubusercontent.com/67671210/96339905-6fcfd480-10d2-11eb-8ad6-660763e97036.gif)
+
 
 ## コメント機能
 投稿されたデータのハンバーガーメニューから詳細ボタンをクリックしていただくと、投稿詳細ページへ遷移します。  
 そちらのページで、コメントを入力していくことができます。
-![3ef3574b061924a2af477f645cfc7efeのコピー](https://user-images.githubusercontent.com/67671210/96339473-e9b28e80-10cf-11eb-9bf4-d46bab249ce9.gif)
-# デザインについて
+![comment](https://user-images.githubusercontent.com/67671210/96339899-67779980-10d2-11eb-9e59-ddd0bbba448d.gif)
+
+
 
 
