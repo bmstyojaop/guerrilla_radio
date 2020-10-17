@@ -98,7 +98,7 @@ URL(https://guerrillaradio.herokuapp.com/) へアクセスしていただき、
 ## コメント機能
 投稿されたデータのハンバーガーメニューから詳細ボタンをクリックしていただくと、投稿詳細ページへ遷移します。  
 そちらのページで、コメントを入力していくことができます。
-![35D96041-C58E-4A13-9800-CFC171E26015_1_105_c](https://user-images.githubusercontent.com/67671210/96332510-4a75a300-109f-11eb-9cc2-d04485fad908.jpeg)
+https://raw.github.com/wiki/bmstyojaop/guerrilla_radio/images/3ef3574b061924a2af477f645cfc7efe.mp4
 
 
 # デザインについて
