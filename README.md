@@ -93,7 +93,7 @@ URL(https://guerrillaradio.herokuapp.com/) へアクセスしていただき、
 
 
 
-## いいね一覧
+## お気に入り一覧
 ヘッダーの☆マークをクリックすると、お気に入り一覧ページへ遷移します。
 ![likecollection](https://user-images.githubusercontent.com/67671210/96339905-6fcfd480-10d2-11eb-8ad6-660763e97036.gif)
 
