@@ -8,16 +8,16 @@ default: &default
 
 development:
   <<: *default
-  database: guerrilla_radio_ec2_development
+  database: guerrilla_radio__development
 
 
 test:
   <<: *default
-  database: guerrilla_radio_ec2_test
+  database: guerrilla_radio_test
 
 production:
   <<: *default
-  database: guerrilla_radio_ec2_production
+  database: guerrilla_radio_production
   username: root
   password: <%= ENV['DATABASE_PASSWORD'] %>
   socket: /var/lib/mysql/mysql.sock
